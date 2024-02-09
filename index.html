@@ -1,196 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Smooth Page</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(45deg, #f2f2f2, #333);
-            background-size: 400% 400%;
-            animation: gradientAnimation 10s infinite; /* Adjust the duration as needed */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            position: relative;
-        }
-
-        h1 {
-            font-size: 3em;
-            margin-bottom: 20px;
-            background: linear-gradient(90deg, rgb(255, 0, 0), rgb(0, 255, 0), rgb(0, 0, 0));
-            background-size: 600% 100%;
-            color: transparent;
-            -webkit-background-clip: text;
-            text-shadow: 0 0 10px white; /* White outline */
-            animation: gradientTextAnimation 5s infinite; /* Adjust the duration as needed */
-        }
-
-        @keyframes gradientAnimation {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        @keyframes gradientTextAnimation {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        /* Trail Effect Styles */
-        .cursor-trail {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background-color: #ffcc00; /* Trail color */
-            border-radius: 50%;
-            pointer-events: none;
-            transform-origin: center;
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-
-        a.button-link {
-            position: relative;
-            text-decoration: none;
-        }
-
-        button {
-            font-size: 2em;
-            padding: 15px 30px;
-            background-color: #002147; /* Dark blue color */
-            color: white;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-
-        button:hover {
-            background-color: #001529; /* Darker blue color on hover */
-            transform: scale(1.1);
-        }
-
-        .notification {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgba(76, 175, 80, 0.8); /* Background with blur effect */
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            z-index: 999; /* Ensure notification is on top */
-            backdrop-filter: blur(5px); /* Blur effect */
-        }
-
-        .check-icon {
-            width: 40px;
-            height: 40px;
-            background: url('https://cdn-icons-png.freepik.com/512/5610/5610944.png') no-repeat center center;
-            background-size: cover;
-            margin: 0 auto 10px; /* Center the icon */
-        }
-
-        .animated-text {
-            position: absolute;
-            bottom: 10px;
-            font-size: 1.2em;
-            color: white;
-            opacity: 0;
-            animation: jumpAnimation 1s infinite;
-        }
-
-        @keyframes jumpAnimation {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40%, 60% {
-                transform: translateY(-15px);
-            }
-        }
-
-        .arrow-indicator {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            width: 20px;
-            height: 20px;
-            background-color: #ffcc00;
-            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-            transform: rotate(45deg);
-            display: none;
-        }
-
-        .show-arrow .arrow-indicator {
-            display: block;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Supra Method Admin Method V3</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('https://www.pixground.com/windows-11-orange-background-4k-wallpaper/?download-img=2k'); /* Default Windows wallpaper image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: none; /* Hide default cursor */
+  }
+  .window {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    border: 1px solid #FF0000; /* Windows 10 style border */
+    border-radius: 8px;
+    background-color: #ffffff; /* Windows 10 style window background color */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Windows 10 style shadow */
+    transition: box-shadow 0.3s ease; /* Smooth transition for shadow */
+    z-index: 9999; /* Ensure window is above other elements */
+  }
+  .title-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #FF0000; /* Windows 10 style title bar background color */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  .title-bar .title {
+    color: #ffffff; /* Windows 10 style title bar text color */
+  }
+  .title-bar .buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .title-bar .button {
+    width: 12px;
+    height: 12px;
+    margin-left: 8px;
+    border-radius: 50%;
+    background-color: #ffffff; /* Windows 10 style button color */
+    cursor: pointer;
+  }
+  .title-bar .button:hover {
+    background-color: #f3f3f3; /* Adjusted button color on hover */
+  }
+  .content {
+    padding: 20px;
+    position: relative;
+  }
+  .content textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #d4d4d4; /* Windows 10 style textarea border */
+    border-radius: 4px;
+    resize: none; /* Prevent resizing */
+  }
+  .content button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #0078d4; /* Windows 10 style button color */
+    color: #ffffff; /* Windows 10 style button text color */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+  }
+  .content button:hover {
+    background-color: #0056b3; /* Adjusted button color on hover */
+  }
+  .cursor {
+    position: absolute;
+    width: 32px; /* Adjust width as per your cursor image */
+    height: 32px; /* Adjust height as per your cursor image */
+    background-image: url('https://cdn1.iconfinder.com/data/icons/cursor-pointers/24/9-512.png'); /* Path to your cursor image */
+    background-size: cover;
+    pointer-events: none;
+    z-index: 9999; /* Ensure cursor is above all other elements */
+    transition: transform 0.1s ease; /* Smooth transform transition */
+  }
+  .connection {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #0078d4;
+    animation: fade 2s infinite;
+  }
+  .connection img {
+    margin-right: 5px;
+    width: 20px;
+    height: 20px;
+  }
+  @keyframes fade {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+  }
+</style>
 </head>
 <body>
-    <h1>Supra Bootstrapper</h1>
-    <a href="https://cdn.discordapp.com/attachments/1199408845513039992/1201602008638038067/SupraV3_5.exe?ex=65ca6a13&is=65b7f513&hm=122d66c0cf6131dad8e2d23716257a437b48f25c80bd6554d471b12b4890a1ba&" class="button-link">
-        <button onclick="showNotification()">Launch</button>
-    </a>
-    <div class="animated-text">Crash Fixed</div>
-    <div class="cursor-trail"></div> <!-- Cursor trail element -->
-    <div class="arrow-indicator"></div> <!-- Arrow indicator element -->
 
-    <div id="notification" class="notification">
-        <div class="check-icon"></div>
-        Open file in Downloads! SupraMethod
+<div class="window" id="draggable">
+  <div class="title-bar">
+    <div class="title">Supra Method Admin Method V3</div>
+    <div class="buttons">
+      <div class="button close"></div>
+      <div class="button minimize"></div>
+      <div class="button resize"></div>
     </div>
+  </div>
+  <div class="content">
+    <textarea id="text1" readonly>"C:\Users\kiosk\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\System Tools\Command Prompt.lnk"
+</textarea>
+    <button onclick="copyText('text1')">Launch Option Copy</button>
+    <textarea id="text2" readonly>cd "C:\Program Files (x86)\NVIDIA_Grid_Bundle\darwin_project_gfn_pc\common\Darwin Project\" & write installscript_544921.vdf
+</textarea>
+    <button onclick="copyText('text2')">CMD Command Copy</button>
+    <p id="copiedText"></p>
+    <div class="connection">
+      <img src="https://images.freeimages.com/fic/images/icons/2711/free_icons_for_windows8_metro/512/connected.png" alt="Server icon">
+      Connected to Supra Server
+    </div>
+  </div>
+</div>
 
-    <script>
-        function showNotification() {
-            var notification = document.getElementById("notification");
-            notification.style.display = "block";
+<div class="cursor"></div> <!-- Custom cursor -->
 
-            // Show the arrow indicator
-            var arrowIndicator = document.querySelector(".arrow-indicator");
-            arrowIndicator.classList.add("show-arrow");
+<script>
+  // Dragging functionality
+  var windowElement = document.getElementById("draggable");
+  var offsetX, offsetY;
 
-            // Hide the notification after 2 seconds (adjust as needed)
-            setTimeout(function() {
-                notification.style.display = "none";
-                // Hide the arrow indicator
-                arrowIndicator.classList.remove("show-arrow");
-            }, 2000);
-        }
+  windowElement.addEventListener("mousedown", startDrag);
 
-        document.addEventListener("mousemove", function(e) {
-            // Update the position of the cursor trail
-            var cursorTrail = document.querySelector(".cursor-trail");
-            cursorTrail.style.left = e.pageX + "px";
-            cursorTrail.style.top = e.pageY + "px";
+  function startDrag(e) {
+    e.preventDefault();
+    offsetX = e.clientX - windowElement.getBoundingClientRect().left;
+    offsetY = e.clientY - windowElement.getBoundingClientRect().top;
+    document.addEventListener("mousemove", drag);
+    document.addEventListener("mouseup", stopDrag);
+  }
 
-            // Show the cursor trail with a fade-in effect
-            cursorTrail.style.opacity = "0.8";
-            setTimeout(function() {
-                cursorTrail.style.opacity = "0";
-            }, 500);
-        });
-    </script>
+  function drag(e) {
+    windowElement.style.left = e.clientX - offsetX + "px";
+    windowElement.style.top = e.clientY - offsetY + "px";
+  }
+
+  function stopDrag() {
+    document.removeEventListener("mousemove", drag);
+    document.removeEventListener("mouseup", stopDrag);
+  }
+</script>
+
+<script>
+  document.addEventListener("mousemove", function(e) {
+    var cursor = document.querySelector(".cursor");
+    cursor.style.left = e.pageX + "px";
+    cursor.style.top = e.pageY + "px";
+  });
+</script>
+
+<script>
+  function copyText(textAreaId) {
+    var textToCopy = document.getElementById(textAreaId).value;
+    var textArea = document.createElement("textarea");
+    textArea.value = textToCopy;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand("copy");
+    document.body.removeChild(textArea);
+    document.getElementById("copiedText").innerText = "Command Copied!";
+  }
+</script>
+
 </body>
 </html>
