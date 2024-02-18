@@ -136,10 +136,12 @@
 </textarea>
     <button onclick="copyText('text2')">CMD Command Copy</button>
     <p id="copiedText"></p>
+
     <div class="connection">
-      <img src="https://images.freeimages.com/fic/images/icons/2711/free_icons_for_windows8_metro/512/connected.png" alt="Server icon">
-      Connected to Supra Server
     </div>
+
+    <!-- Added link -->
+    <div class="link" draggable="true" onclick="copyLink()">http://gg.gg/supraontop</div> Click on link to copy it !
   </div>
 </div>
 
@@ -169,6 +171,18 @@
     document.removeEventListener("mousemove", drag);
     document.removeEventListener("mouseup", stopDrag);
   }
+
+  // Function to copy the link text
+  function copyLink() {
+    var linkText = document.querySelector('.link').innerText;
+    navigator.clipboard.writeText(linkText).then(function() {
+      console.log('Link copied successfully');
+      // You can provide visual feedback here, like changing the color of the link momentarily
+      document.getElementById("copiedText").innerText = "Link Copied!";
+    }, function(err) {
+      console.error('Could not copy text: ', err);
+    });
+  }
 </script>
 
 <script>
@@ -177,19 +191,6 @@
     cursor.style.left = e.pageX + "px";
     cursor.style.top = e.pageY + "px";
   });
-</script>
-
-<script>
-  function copyText(textAreaId) {
-    var textToCopy = document.getElementById(textAreaId).value;
-    var textArea = document.createElement("textarea");
-    textArea.value = textToCopy;
-    document.body.appendChild(textArea);
-    textArea.select();
-    document.execCommand("copy");
-    document.body.removeChild(textArea);
-    document.getElementById("copiedText").innerText = "Command Copied!";
-  }
 </script>
 
 </body>
