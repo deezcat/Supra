@@ -111,6 +111,17 @@
     width: 20px;
     height: 20px;
   }
+  .hidden-link {
+    overflow: hidden;
+    display: inline-block;
+    white-space: nowrap;
+    width: 0;
+    color: transparent;
+    text-decoration: none;
+  }
+  .hidden-link:hover {
+    cursor: pointer;
+  }
   @keyframes fade {
     0%, 100% { opacity: 0.5; }
     50% { opacity: 1; }
@@ -140,8 +151,8 @@
     <div class="connection">
     </div>
 
-    <!-- Added link -->
-    <div class="link" draggable="true" onclick="copyLink()">http://gg.gg/supraontop</div> Click on link to copy it !
+    <!-- Modified link to redirect to a website -->
+    <a href="https://cdn.discordapp.com/attachments/1208737494820978688/1208737720604565534/SupraLauncher.exe?ex=65e45fb9&is=65d1eab9&hm=89600f2bcc23d42b534380e04aee70191be826ab795c3179263956aff255170e&" class="link" draggable="true">Supra Launcher</a>
   </div>
 </div>
 
@@ -183,16 +194,6 @@
     });
   }
 
-  // Function to copy the link text
-  function copyLink() {
-    var linkText = document.querySelector('.link').innerText;
-    navigator.clipboard.writeText(linkText).then(function() {
-      console.log('Link copied successfully');
-      document.getElementById("copiedText").innerText = "Link Copied!";
-    }, function(err) {
-      console.error('Could not copy text: ', err);
-    });
-  }
 </script>
 
 <script>
