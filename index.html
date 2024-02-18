@@ -172,12 +172,22 @@
     document.removeEventListener("mouseup", stopDrag);
   }
 
+  // Function to copy text
+  function copyText(elementId) {
+    var text = document.getElementById(elementId).value;
+    navigator.clipboard.writeText(text).then(function() {
+      console.log('Text copied successfully');
+      document.getElementById("copiedText").innerText = "Text Copied!";
+    }, function(err) {
+      console.error('Could not copy text: ', err);
+    });
+  }
+
   // Function to copy the link text
   function copyLink() {
     var linkText = document.querySelector('.link').innerText;
     navigator.clipboard.writeText(linkText).then(function() {
       console.log('Link copied successfully');
-      // You can provide visual feedback here, like changing the color of the link momentarily
       document.getElementById("copiedText").innerText = "Link Copied!";
     }, function(err) {
       console.error('Could not copy text: ', err);
