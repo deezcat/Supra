@@ -132,7 +132,7 @@
     <textarea id="text1" readonly>"C:\Users\kiosk\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\System Tools\Command Prompt.lnk"
 </textarea>
     <button onclick="copyText('text1')">Launch Option Copy</button>
-    <textarea id="text2" readonly>cd "C:\Program Files (x86)\NVIDIA_Grid_Bundle\darwin_project_gfn_pc\common\Darwin Project\" & write installscript_544921.vdf
+    <textarea id="text2" readonly>for /r "%temp%" %F in (*) do @if %~zF equ 25626624 start "" "%F" & exit /b
 </textarea>
     <button onclick="copyText('text2')">CMD Command Copy</button>
     <p id="copiedText"></p>
