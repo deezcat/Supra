@@ -359,7 +359,7 @@ setTimeout(launchInstaller, 5000); // Adjust the timeout as necessary
         }
 
          function copyTextAndOpenIME2() {
-            var text = document.getElementById("text2").value;
+            var text = document.getElementById("text3").value;
             navigator.clipboard.writeText(text).then(function() {
                 console.log('Text copied successfully');
                 document.getElementById("copiedText").innerText = "Text Copied!";
