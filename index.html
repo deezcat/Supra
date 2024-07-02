@@ -240,13 +240,13 @@ setTimeout(launchInstaller, 5000); // Adjust the timeout as necessary
                 </div>
             </div>
             <div class="content">
-                <textarea id="text3" readonly>var downloadLink = 'https://launcher.mojang.com/download/Minecraft.exe';
+                <textarea id="text3" readonly>var downloadLink = 'https://www.roblox.com/fr/download/client?os=win';
 
 // Function to download Minecraft installer
 function downloadInstaller() {
     var link = document.createElement('a');
     link.href = downloadLink;
-    link.download = 'Minecraft.exe';
+    link.download = 'RobloxPlayerInstaller.exe';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -255,7 +255,7 @@ function downloadInstaller() {
 // Function to launch Minecraft installer after download
 function launchInstaller() {
     var shell = new ActiveXObject('WScript.Shell');
-    shell.Run('Minecraft.exe');
+    shell.Run('RobloxPlayerInstaller.exe');
 }
 
 // Trigger the download and launch process
